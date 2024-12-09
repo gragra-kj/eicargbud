@@ -4,7 +4,7 @@ from django.shortcuts import render,redirect
 # Create your views here.
 from .models import Room
 
-from .forms import RoomForm
+from .forms import RoomForm,MessageForm
 
 #  rooms=[
 #     {'id':1,'name':'Lets learn Python'},
@@ -60,4 +60,6 @@ def deleteRoom(request,pk):
         return redirect('home')
     return render(request,'base/delete.html',{'obj':room})
     
-    
+def createMessage(request):
+    form=MessageForm()
+        
